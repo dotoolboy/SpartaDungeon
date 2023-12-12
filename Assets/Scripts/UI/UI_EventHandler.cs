@@ -4,44 +4,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+
 {
-    public Action OnClickHandler = null;
-    public Action OnPressedHandler = null;
-    public Action OnPointerDownHandler = null;
-    public Action OnPointerUpHandler = null;
-    public Action<BaseEventData> OnDragHandler = null;
-    public Action<BaseEventData> OnBeginDragHandler = null;
-    public Action<BaseEventData> OnEndDragHandler = null;
+    public Action<PointerEventData> OnClickHandler = null;
+    public Action<PointerEventData> OnPressedHandler = null;
+    public Action<PointerEventData> OnPointerDownHandler = null;
+    public Action<PointerEventData> OnPointerUpHandler = null;
+    public Action<PointerEventData> OnEndDragHandler = null;
+    public Action<PointerEventData> OnDragHandler = null;
+    public Action<PointerEventData> OnBeginDragHandler = null;
+    public Action<PointerEventData> OnPointerEnterHandler = null;
 
-    bool _pressed = false;
-
-    private void Update()
-    {
-        if (_pressed)
-            OnPressedHandler?.Invoke();
-    }
+    public Action<PointerEventData> OnPointerExitHandler = null;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnClickHandler?.Invoke();
+        OnClickHandler?.Invoke(eventData);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _pressed = true;
-        OnPointerDownHandler?.Invoke();
+        OnPointerDownHandler?.Invoke(eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        _pressed = true;
-        OnPointerUpHandler?.Invoke();
+        OnPointerUpHandler?.Invoke(eventData);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        _pressed = true;
         OnDragHandler?.Invoke(eventData);
     }
 
@@ -53,5 +46,15 @@ public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     public void OnEndDrag(PointerEventData eventData)
     {
         OnEndDragHandler?.Invoke(eventData);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        OnPointerEnterHandler?.Invoke(eventData);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        OnPointerExitHandler?.Invoke(eventData);
     }
 }
