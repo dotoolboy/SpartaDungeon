@@ -10,21 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: Sprites
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: Sprites
   m_Data:
     m_SerializedData: []
-  m_GUID: 2a4791cac65a7d54f80d9a9dbcb863af
+  m_GUID: c36d113c32f29704fa57f48212aa6556
   m_SerializeEntries:
-  - m_GUID: fd8421f921f22e548b2b3ad67203db68
-    m_Address: CharacterData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 47f4fa1271c2f07468c89f53258b29bb
-    m_Address: ItemData
+  - m_GUID: 5fd50594014b70e48bd6993443d46b32
+    m_Address: Sword.sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -33,5 +27,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: ba633f28e54aaf24e8ba63eaf82c4390, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 5b979d0c8029a084282776a80fa82c42, type: 2}
-    - {fileID: 11400000, guid: 759bea7c262ef8745988c3eece3eb0a6, type: 2}
+    - {fileID: 11400000, guid: be694577c646a384292a6862869852e3, type: 2}
+    - {fileID: 11400000, guid: 7765cbb27682675489c391eec6036293, type: 2}

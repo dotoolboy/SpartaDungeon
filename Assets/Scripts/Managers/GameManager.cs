@@ -8,7 +8,6 @@ public class GameManager
     public void Initialize()
     {
         Player = new("Player", Main.Data.Characters["Warrior"]);
-        Debug.Log(Player.Data.Hp);
     }
 
 }

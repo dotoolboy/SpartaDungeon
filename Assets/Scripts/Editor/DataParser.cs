@@ -72,8 +72,9 @@ public class DataTransformer : EditorWindow
             loader.items.Add(new()
             {
                 key = row[0],
-                description = row[1],
-                cost = ConvertValue<float>(row[2]),
+                itemname = row[1],
+                itemdescription = row[2],
+                cost = ConvertValue<float>(row[3]),
                 modifiers = modifiers,
             });
         }

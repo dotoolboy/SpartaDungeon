@@ -7,7 +7,8 @@ using UnityEngine;
 public class ItemData
 {
     public string key;
-    public string description;
+    public string itemname;
+    public string itemdescription;
     public float cost;
     public List<StatModifier> modifiers;
 }
