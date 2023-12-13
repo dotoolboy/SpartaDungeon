@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "key": "Sword",
+      "description": "검",
+      "cost": 1000.0,
+      "modifiers": [
+        {
+          "Stat": 1,
+          "Type": 0,
+          "Value": 10.0
+        }
+      ]
+    }
+  ]
+}

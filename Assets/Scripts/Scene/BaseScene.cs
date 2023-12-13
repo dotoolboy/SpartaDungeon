@@ -13,8 +13,8 @@ public class BaseScene : MonoBehaviour
     {
         if (Main.Resource.Loaded)
         {
-            //Main.Data.Initialize();
-            //Main.Game.Initialize();
+            Main.Data.Initialize();
+            Main.Game.Initialize();
             Initialize();
         }
         else
@@ -25,8 +25,8 @@ public class BaseScene : MonoBehaviour
                 if (count >= totalCount)
                 {
                     Main.Resource.Loaded = true;
-                    //Main.Data.Initialize();
-                    //Main.Game.Initialize();
+                    Main.Data.Initialize();
+                    Main.Game.Initialize();
                     Initialize();
                 }
             });

@@ -18,7 +18,10 @@ public class UI_Scene_Main : UI_Scene
         PlayerSprite
     }
 
+
     #endregion
+
+
     void Start()
     {
         Initialize();
@@ -31,7 +34,17 @@ public class UI_Scene_Main : UI_Scene
         BindText(typeof(Texts));
         BindImage(typeof(Images));
 
+
+        SetPlayerData();
+
         return true;
+    }
+
+    private void SetPlayerData()
+    {
+        GetText((int)Texts.PlayerNameText).text = Main.Game.Player.UserName;
+        GetText((int)Texts.ClassText).text = Main.Game.Player.ClassName;
+        GetText((int)Texts.ClassDescriptionText).text = Main.Game.Player.ClassDescription;
     }
 
 }
