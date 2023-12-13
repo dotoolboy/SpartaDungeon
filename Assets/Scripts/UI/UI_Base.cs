@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Diagnostics;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Define;
@@ -14,7 +13,7 @@ public class UI_Base : MonoBehaviour
     #region Fields
 
     private Dictionary<Type, UnityEngine.Object[]> objects = new();
-    private bool initialized = false;
+    private bool _initialized = false;
 
     #endregion
 
@@ -31,8 +30,8 @@ public class UI_Base : MonoBehaviour
 
     public virtual bool Initialize()
     {
-        if (initialized) return false;
-        initialized = true;
+        if (_initialized) return false;
+        _initialized = true;
         return true;
     }
 
@@ -71,39 +70,39 @@ public class UI_Base : MonoBehaviour
     protected Button GetButton(int index) => Get<Button>(index);
 
 
-    public static void BindEvent(GameObject obj, Action action = null, Action<BaseEventData> dragAction = null, UIEvent type = UIEvent.Click)
+    public static void BindEvent(GameObject obj, Action<PointerEventData> action = null, Define.UIEvent type = Define.UIEvent.Click)
     {
-        UI_EventHandler eventHandler = Util.GetOrAddComponent<UI_EventHandler>(obj);
+        UI_EventHandler evt = Util.GetOrAddComponent<UI_EventHandler>(obj);
 
         switch (type)
         {
             case UIEvent.Click:
-                eventHandler.OnClickHandler -= action;
-                eventHandler.OnClickHandler += action;
+                evt.OnClickHandler -= action;
+                evt.OnClickHandler += action;
                 break;
-            case UIEvent.Preseed:
-                eventHandler.OnPressedHandler -= action;
-                eventHandler.OnPressedHandler += action;
+            case UIEvent.Press:
+                evt.OnPressedHandler -= action;
+                evt.OnPressedHandler += action;
                 break;
             case UIEvent.PointerDown:
-                eventHandler.OnPointerDownHandler -= action;
-                eventHandler.OnPointerDownHandler += action;
+                evt.OnPointerDownHandler -= action;
+                evt.OnPointerDownHandler += action;
                 break;
             case UIEvent.PointerUp:
-                eventHandler.OnPointerUpHandler -= action;
-                eventHandler.OnPointerUpHandler += action;
+                evt.OnPointerUpHandler -= action;
+                evt.OnPointerUpHandler += action;
                 break;
             case UIEvent.Drag:
-                eventHandler.OnDragHandler -= dragAction;
-                eventHandler.OnDragHandler += dragAction;
+                evt.OnDragHandler -= action;
+                evt.OnDragHandler += action;
                 break;
             case UIEvent.BeginDrag:
-                eventHandler.OnBeginDragHandler -= dragAction;
-                eventHandler.OnBeginDragHandler += dragAction;
+                evt.OnBeginDragHandler -= action;
+                evt.OnBeginDragHandler += action;
                 break;
             case UIEvent.EndDrag:
-                eventHandler.OnEndDragHandler -= dragAction;
-                eventHandler.OnEndDragHandler += dragAction;
+                evt.OnEndDragHandler -= action;
+                evt.OnEndDragHandler += action;
                 break;
         }
     }

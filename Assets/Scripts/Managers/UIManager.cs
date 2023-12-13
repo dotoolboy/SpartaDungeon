@@ -159,13 +159,3 @@ public class UIManager
 
 }
 
-public enum UIEvent
-{
-    Click,
-    Preseed,
-    PointerDown,
-    PointerUp,
-    BeginDrag,
-    Drag,
-    EndDrag,
-}

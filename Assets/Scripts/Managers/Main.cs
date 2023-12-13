@@ -31,10 +31,12 @@ public class Main : MonoBehaviour
     private readonly PoolManager _pool = new();
     private readonly ResourceManager _resource = new();
     private readonly UIManager _ui = new();
+    private readonly SceneManagerEx _scene = new();
 
     public static PoolManager Pool => Instance?._pool;
     public static ResourceManager Resource => Instance?._resource;
     public static UIManager UI => Instance?._ui;
+    public static SceneManagerEx Scene => Instance?._scene;
 
     public static void Clear()
     {
