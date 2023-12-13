@@ -52,6 +52,7 @@ public class UI_Popup_Status : UI_Popup
     public void OnBtnClose(PointerEventData data)
     {
         Main.UI.ClosePopup(this);
+
     }
 
 }

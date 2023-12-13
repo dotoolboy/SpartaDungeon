@@ -49,5 +49,6 @@ public class UI_Popup_Shop : UI_Popup
     public void OnBtnClose(PointerEventData data)
     {
         Main.UI.ClosePopup(this);
+
     }
 }

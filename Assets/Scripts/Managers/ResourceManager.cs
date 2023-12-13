@@ -125,7 +125,6 @@ public class ResourceManager
     }
 
     // prefab
-    //GameObject obj = Thing.Resource.InstantiatePrefab("name.prefab");
     public GameObject Instantiate(string key, Transform parent = null, bool pooling = false)
     {
         GameObject prefab = Load<GameObject>(key);

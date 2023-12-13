@@ -34,19 +34,16 @@ public class UI_Popup_SelectMenu : UI_Popup
 
     public void OnBtnStatus(PointerEventData data)
     {
-        Main.UI.ClosePopup(this);
         Main.UI.ShowPopupUI<UI_Popup_Status>();
     }
 
     public void OnBtnInventory(PointerEventData data)
     {
-        Main.UI.ClosePopup(this);
         Main.UI.ShowPopupUI<UI_Popup_Inventory>();
     }
 
     public void OnBtnShop(PointerEventData data)
     {
-        Main.UI.ClosePopup(this);
         Main.UI.ShowPopupUI<UI_Popup_Shop>();
     }
 }
