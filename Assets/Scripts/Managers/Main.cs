@@ -32,11 +32,15 @@ public class Main : MonoBehaviour
     private readonly ResourceManager _resource = new();
     private readonly UIManager _ui = new();
     private readonly SceneManagerEx _scene = new();
+    private readonly DataManager _data = new();
+    private readonly GameManager _game = new();
 
     public static PoolManager Pool => Instance?._pool;
     public static ResourceManager Resource => Instance?._resource;
     public static UIManager UI => Instance?._ui;
     public static SceneManagerEx Scene => Instance?._scene;
+    public static DataManager Data => Instance?._data;
+    public static GameManager Game => Instance?._game;
 
     public static void Clear()
     {

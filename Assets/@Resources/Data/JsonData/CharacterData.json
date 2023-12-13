@@ -1,0 +1,14 @@
+{
+  "characters": [
+    {
+      "key": "Warrior",
+      "name": "전사",
+      "description": "근접공격하는 전사",
+      "Hp": 100.0,
+      "Atk": 20.0,
+      "Def": 10.0,
+      "Cri": 5.0,
+      "Gold": 1000
+    }
+  ]
+}
