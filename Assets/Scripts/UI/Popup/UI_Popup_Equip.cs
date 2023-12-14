@@ -1,18 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UI_Popup_Equip : UI_Popup
 {
-    // Start is called before the first frame update
-    void Start()
+    private enum Buttons
     {
-        
+        CancleBtn,
+        ConfirmBtn
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
-        
+        Initialize();
+    }
+
+    public override bool Initialize()
+    {
+        if (!base.Initialize()) return false;
+        BindButton(typeof(Buttons));
+
+        GetButton((int)Buttons.CancleBtn).gameObject.BindEvent(CancleBtn);
+        GetButton((int)Buttons.ConfirmBtn).gameObject.BindEvent(ConfirmBtn);
+
+
+        return true;
+
+    }
+
+    public void CancleBtn(PointerEventData data)
+    {
+        Main.UI.ClosePopup(this);
+    }
+
+    public void ConfirmBtn(PointerEventData data)
+    {
+        Main.UI.ClosePopup(this);
+
     }
 }
